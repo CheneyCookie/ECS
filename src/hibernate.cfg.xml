@@ -1,0 +1,22 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+	
+<hibernate-configuration>
+<session-factory>
+	<property name="show_sql">true</property>
+	<property name="connection.characterEncoding">UTF-8</property>
+	<!--  
+	<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+	<property name="connection.url">jdbc:mysql://127.0.0.1:3306/cheney</property>
+	<property name="connection.username">root</property>
+	<property name="connection.password">root</property>
+	-->
+	<property name="connection.datasource">java:comp/env/jdbc/cheneyDS</property>
+	<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+	
+	<mapping resource="com/ecs/bean/user.hbm.xml" />
+	<mapping resource="com/ecs/bean/administrator.hbm.xml" />
+	
+</session-factory>
+</hibernate-configuration>
